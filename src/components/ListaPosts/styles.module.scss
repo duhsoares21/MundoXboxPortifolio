@@ -1,0 +1,126 @@
+.postContainer {
+    display: flex;
+    flex-direction: column;
+
+    .imageContainer {
+        display: flex;
+        
+        width: 215px;
+        max-height: 215px;
+
+        margin-right: 1.2rem;
+        img {
+            width: 100%;
+            object-fit: cover;
+            border-radius: 0.5rem;
+        }
+    }
+
+    .textContainer {
+        width: 70%;
+    }
+
+    & + div.postContainer {
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid #323238;
+    }
+}
+
+.postLink {
+    display: flex;
+    min-height: 185px;
+
+    time {
+        display: flex;
+        align-items: center;
+        font-size: 1rem;
+        color: #a8a8b3;
+    }
+
+    strong {
+        display: block;
+        font-size: 1.5rem;
+        margin-top: 1rem;
+        line-height: 2rem;
+        transition: color 0.2s;
+    }
+
+    p {
+        color: #a8a8b3;
+        margin-top: 0.5rem;
+        line-height: 1.625rem;
+    }
+
+    &:hover strong {
+        color: #9bf00b;
+    }
+}
+
+.tags { 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin-top: 0rem;
+    flex-wrap: wrap;
+
+    a {
+        display: flex;
+        align-items: center;
+        
+        height: 32px;
+        
+        background: #9bf00b;
+        color: #1f2729;
+        
+        padding: 5px 10px;
+        margin-right: 1.2rem;
+        margin-top: 1.2rem;
+        border-radius: 0.5rem;
+        
+        font-size: 0.8rem;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}
+
+@media(max-width: 480px){
+    .posts {
+        .tags { 
+
+            flex-wrap: wrap;
+            margin-top: 0;
+            
+            a {
+                display: flex;
+                align-items: center;
+
+                height: 32px;
+                padding: 0 12px;
+                
+                margin-top: 1.2rem;
+            }
+        }
+    }
+
+    .postContainer { 
+        a {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .imageContainer {
+            width: 100% ;
+
+            margin-right: 0;
+            margin-bottom: 1.2rem;
+        }
+
+        .textContainer {
+            width: 100%;
+        }
+    }
+
+}
